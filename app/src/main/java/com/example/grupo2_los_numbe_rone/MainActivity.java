@@ -11,7 +11,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     // inicialisanco las variables
     ListView listView;
-    ArrayList<Pais> arraylist;
+    ArrayList<String> lista_menu;
+    Pais chile, argentina, peru;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,15 +21,21 @@ public class MainActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.ListView_elementos);
         // lista
-        arraylist = new ArrayList<Pais>();
-        arraylist.add(new Pais(0 , "Chile"));
-        arraylist.add(new Pais( 0, "Peru"));
-        arraylist.add(new Pais(0, "Argentina"));
+        lista_menu = new ArrayList<String>();
+        lista_menu.add("Chile");
+        lista_menu.add("Peru");
+        lista_menu.add("Argentina");
+
+        argentina = new Pais(R.drawable.argentina,"Argentina");
+
+
         // adaptador
 
         ArrayAdapter<Pais>  adaptador = new ArrayAdapter<Pais>(this, android.R.layout.simple_list_item_1,arraylist);
 
         listView.setAdapter(adaptador);
+
+        listView.setOnItemClickListener((parent, view, position, id) -> );
 
 
     }
